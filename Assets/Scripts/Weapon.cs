@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     public Bullet bulletPrefab;
     //public Transform bulletSourceTransform;
      private void Update()

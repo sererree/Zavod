@@ -11,13 +11,13 @@ public class Enemy : MonoBehaviour
     public float Damage = 10;
 
     NavMeshAgent _navMeshAgent;
-    //PlayerHealth _playerHealth;
+    PlayerHealth _playerHealth;
 
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
 		//сохранить ссылку на PlayerHealth через GetComponent
-        //_playerHealth = Player.GetComponent<PlayerHealth>();
+        _playerHealth = Player.GetComponent<PlayerHealth>();
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
 				//Отнять от здоровья игрока Damage в секунду
-                //_playerHealth.TakeDamage(Damage * Time.deltaTime);
+                _playerHealth.TakeDamage(Damage * Time.deltaTime);
             }
         }
         else

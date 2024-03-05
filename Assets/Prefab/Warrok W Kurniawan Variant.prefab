@@ -213,6 +213,22 @@ MonoBehaviour:
   Gravity: 9.8
   JumpForce: 5
   Speed: 5
+--- !u!114 &4313625773474947870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854890843814469604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f2825afd14fb0478f187f022a3f328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxValue: 100
+  Healthbar: {fileID: 0}
+  PlayerUI: {fileID: 0}
+  GameOverUI: {fileID: 0}
 --- !u!114 &7986610509978103940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +243,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2191948700826196075, guid: 466cca552062bed4cbd97f9b69f429c8,
     type: 3}
-  bulletSourceTransform: {fileID: 0}
 --- !u!1001 &7044549331504505525
 PrefabInstance:
   m_ObjectHideFlags: 0
