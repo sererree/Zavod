@@ -29,6 +29,16 @@ public class PlayerHealth : MonoBehaviour
         }
         UpdateHealthbar();
     }
+    public void AddHealth(float amount)
+    {
+        _currentValue += amount;
+        if (_currentValue > MaxValue)
+        {
+            _currentValue = MaxValue;
+        }
+        //HealEffect.GetComponent<ParticleSystem>().Play();
+        UpdateHealthbar();
+    }
 
     void UpdateHealthbar()
     {
