@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public float Gravity = 9.8f;
     public float JumpForce = 7;
     public float Speed = 5;
+    public AudioSource sound;
 
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
@@ -23,15 +24,21 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
+           
             _moveVector += transform.forward;
+            
         }
         if (Input.GetKey(KeyCode.S))
         {
+           
             _moveVector -= transform.forward;
+            
         }
         if (Input.GetKey(KeyCode.D))
         {
+           
             _moveVector += transform.right;
+            
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -68,3 +75,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
