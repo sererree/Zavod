@@ -9,13 +9,18 @@ public class PlayerHealth : MonoBehaviour
     //Не забудь указать ссылки на эти UI элементы в сцене
     public GameObject PlayerUI;
     public GameObject GameOverUI;
+    public float _currentValue;
+    public GameObject WeaponGO;
+    public GameObject End;
 
-    float _currentValue;
+    public AudioSource Background;
+    
 
     void Start()
     {
         _currentValue = MaxValue;
         UpdateHealthbar();
+        End.GetComponent<AudioSource>().enabled = false;
     }
 
     public void TakeDamage(float damage)
@@ -52,6 +57,11 @@ public class PlayerHealth : MonoBehaviour
         GameOverUI.SetActive(true);
         GetComponent<PlayerController>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
-        GetComponent<Weapon>().enabled = false;
+        WeaponGO.GetComponent<Weapon>().enabled = false;
+        WeaponGO.GetComponent<BananaBombLauncher>().enabled = false;
+        Background.Pause();
+        End.GetComponent<AudioSource>().enabled = true;
     }
+
+    
 }

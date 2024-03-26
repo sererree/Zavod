@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class BananaBomb : MonoBehaviour
 {
     //Задай параметры радиуса, урона, таймера и скорости запуска
@@ -9,6 +8,8 @@ public class BananaBomb : MonoBehaviour
     public float Damage = 80;
     public float Timer = 3;
     public float LaunchSpeed = 20;
+
+    
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class BananaBomb : MonoBehaviour
                 }
                 
             }
-            
+
         }
         Instantiate(ExplosionEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
@@ -46,4 +47,5 @@ public class BananaBomb : MonoBehaviour
         CollisionSound.pitch = Random.Range(0.7f, 1.3f);
         CollisionSound.Play();
     }
+    
 }

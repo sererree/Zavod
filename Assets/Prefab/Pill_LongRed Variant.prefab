@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 50
   lifeTime: 60
-  damage: 10
+  damage: 20
   shoot: {fileID: 2359038502829255721}
 --- !u!1001 &7795918599692477632
 PrefabInstance:

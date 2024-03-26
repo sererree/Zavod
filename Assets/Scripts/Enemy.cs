@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public float ViewAngle = 90;
     public float MinDetectDistance = 3;
     public float Damage = 10;
+    public Animator animator;
+   
 
     NavMeshAgent _navMeshAgent;
     PlayerHealth _playerHealth;
@@ -28,7 +30,7 @@ public class Enemy : MonoBehaviour
 			//Если оставшееся расстояние меньше или равно, чем дистанция остановки
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
-				//Отнять от здоровья игрока Damage в секунду
+                animator.SetTrigger("attack");
                 _playerHealth.TakeDamage(Damage * Time.deltaTime);
             }
         }
@@ -38,9 +40,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+   
+
     bool CheckPlayer()
     {
         Vector3 direction = Player.position - transform.position;
+        direction = Vector3.ClampMagnitude(direction, 5);
         if (Vector3.Angle(transform.forward, direction) < ViewAngle || Vector3.Distance(transform.position, Player.position) < MinDetectDistance)
         {
             RaycastHit hit;
